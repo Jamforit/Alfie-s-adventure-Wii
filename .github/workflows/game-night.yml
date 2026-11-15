@@ -1,0 +1,31 @@
+name: Build Alfie's Game Night (Wii)
+on:
+  push:
+    branches:
+      - game-night-wii
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile native Wii homebrew
+        run: |
+          tar -xJf game-night-source.tar.xz
+          cd alfies-game-night-src
+          make clean
+          make
+          test -s boot.dol
+      - name: Prepare Wii Homebrew Channel folder
+        run: |
+          mkdir -p out/apps/alfies-game-night
+          cp alfies-game-night-src/boot.dol out/apps/alfies-game-night/boot.dol
+          cp alfies-game-night-src/meta.xml out/apps/alfies-game-night/meta.xml
+          cp alfies-game-night-src/README-WII.txt out/README-WII.txt
+      - name: Upload Wii-ready files
+        uses: actions/upload-artifact@v4
+        with:
+          name: alfies-game-night-WII-ready
+          path: out/
+          if-no-files-found: error
