@@ -1,0 +1,25 @@
+name: Build Alfie's Adventure for Wii
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+jobs:
+  wii:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkitppc:20261102
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile native Wii DOL
+        run: |
+          export DEVKITPRO=/opt/devkitpro
+          export DEVKITPPC=/opt/devkitpro/devkitPPC
+          make
+      - name: Package Homebrew Channel folder
+        run: |
+          mkdir -p release/apps/alfies_adventure
+          cp boot.dol meta.xml release/apps/alfies_adventure/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alfies-adventure-wii
+          path: release/
