@@ -15,7 +15,7 @@ jobs:
           tar -xJf game-night-source.tar.xz
           cd alfies-game-night-src
           # EAR is reserved by the PowerPC SDK register definitions.
-          sed -i 's/\\<EAR\\>/ALFIE_EAR/g' main.c
+          sed -i 's/EAR/ALFIE_EAR/g' main.c
           make clean
           make
           test -s boot.dol
