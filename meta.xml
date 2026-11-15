@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app version="1">
   <name>Alfie's Adventure</name>
-  <coder>Original homebrew prototype</coder>
-  <version>0.1.0</version>
+  <coder>Made for Kacey &amp; Darcey</coder>
+  <version>0.2.0</version>
   <release_date>20261115000000</release_date>
-  <short_description>A treat-collecting platform game starring Alfie.</short_description>
-  <long_description>Move using the Wii Remote D-pad, jump with 2, collect seven bones and reach Alfie's doghouse. Press + to restart or HOME to exit.</long_description>
+  <short_description>Real Alfie! Three levels, poo powers, sounds and enemies.</short_description>
+  <long_description>Help Alfie explore the garden, park and sunny beach. Find 6 bones per level, collect tennis balls and silly poo speed-ups, and bark at enemies. Sideways Wii Remote: D-pad move, 2 jump, 1 bark, + restart, HOME exit.</long_description>
 </app>
