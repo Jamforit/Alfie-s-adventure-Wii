@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app version="1">
+  <name>Alfie's Adventure</name>
+  <coder>Original homebrew prototype</coder>
+  <version>0.1.0</version>
+  <release_date>20261115000000</release_date>
+  <short_description>A treat-collecting platform game starring Alfie.</short_description>
+  <long_description>Move using the Wii Remote D-pad, jump with 2, collect seven bones and reach Alfie's doghouse. Press + to restart or HOME to exit.</long_description>
+</app>
